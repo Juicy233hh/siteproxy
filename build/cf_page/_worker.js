@@ -1,4 +1,4 @@
-const 域名 = 'test.admincmliunet.workers.dev';
+const 域名 = 'test.090227.xyz';
 const 路径 = 'test';
 const workerHandler = {
     async fetch(request, env) {
@@ -1597,7 +1597,7 @@ var a0_0x396241 = class extends a0_0x428de4 {
         });
     }
 };
-var a0_0x290922;
+var getProxyConfig;
 function a0_0xe11b82() {
     return typeof Bun !== "undefined" || typeof process !== "undefined" && process.versions && process.versions.node;
 }
@@ -1611,22 +1611,22 @@ function a0_0xd23076(_0x1494db) {
 function a0_0x5b9414(_0x558724) {
     if (!(typeof Bun !== "undefined" || typeof process !== "undefined" && process.versions && process.versions.node)) {
         console.log("cloudflare environment!");
-        a0_0x290922 = {
+        getProxyConfig = {
             'proxy_url': `https://${域名}`,
             'token_prefix': `/${路径}/`,
             'local_listen_port': 0x138e
         };
-        console.log("Configuration loaded:", a0_0x290922);
-        a0_0x290922 = a0_0xd23076(a0_0x290922);
-        _0x558724(a0_0x290922);
+        console.log("Configuration loaded:", getProxyConfig);
+        getProxyConfig = a0_0xd23076(getProxyConfig);
+        _0x558724(getProxyConfig);
     } else {
         console.log("node environment!");
         import("fs/promises").then(_0xdc1cdc => {
             _0xdc1cdc.readFile('./config.json', "utf8").then(_0x579f7f => {
-                a0_0x290922 = JSON.parse(_0x579f7f);
-                console.log("Configuration loaded:", a0_0x290922);
-                a0_0x290922 = a0_0xd23076(a0_0x290922);
-                _0x558724(a0_0x290922);
+                getProxyConfig = JSON.parse(_0x579f7f);
+                console.log("Configuration loaded:", getProxyConfig);
+                getProxyConfig = a0_0xd23076(getProxyConfig);
+                _0x558724(getProxyConfig);
             })["catch"](_0x1cb58c => {
                 console.error("Error loading the configuration file:", _0x1cb58c);
             });
@@ -1634,7 +1634,7 @@ function a0_0x5b9414(_0x558724) {
     }
 }
 function a0_0x4468cb() {
-    return a0_0x290922;
+    return getProxyConfig;
 }
 var a0_0x1dd693 = ["telegram.org", "nga.178.com"];
 function a0_0x2fdbcb(_0x38fecf) {
@@ -1794,7 +1794,7 @@ async function a0_0x331cce({
     newResHeaders: _0x127fae,
     req: _0x1b7027
 }) {
-    const _0x28afee = a0_0x290922;
+    const _0x28afee = getProxyConfig;
     const _0xcd68e3 = _0x28afee.proxy_url + _0x28afee.token_prefix;
     const _0x4242b1 = _0x1b7027.proxy_real_protocol;
     const _0xa698d6 = _0x1b7027.proxy_real_host;
@@ -2469,7 +2469,7 @@ function a0_0x2e9a94(_0x2a4f09, _0x3ef523, _0x552044, _0x26c122, _0x50f06f) {
     }
 }
 async function a0_0x24984e(_0x34b9cd, _0x18bbb4, _0x580b61, _0xcbc641) {
-    const _0x3e2643 = a0_0x290922;
+    const _0x3e2643 = getProxyConfig;
     const _0x1b9dc7 = _0x3e2643.proxy_url + _0x3e2643.token_prefix;
     const _0x2ea524 = _0xcbc641.proxy_real_host;
     let _0xcf5a0b;
@@ -2705,7 +2705,7 @@ function a0_0x52a12b(_0x346137, _0x5e2088) {
     return _0xf289fd;
 }
 function a0_0x317d69(_0x366762) {
-    const _0x3b577d = a0_0x290922;
+    const _0x3b577d = getProxyConfig;
     const _0x36144e = _0x3b577d.token_prefix;
     const _0x66368 = _0x3b577d.proxy_url + _0x36144e + "https/";
     const _0x5695d9 = _0x3b577d.proxy_url + _0x36144e + "http/";
@@ -2740,7 +2740,7 @@ function a0_0xd10392(_0x596623) {
     });
 }
 var a0_0x1e64f3 = async (_0x50fa72, _0x2f5cf2) => {
-    const _0x29afee = a0_0x290922;
+    const _0x29afee = getProxyConfig;
     let {
         req: _0x40db73,
         res: _0x3051a0
@@ -2776,7 +2776,7 @@ var a0_0x1e64f3 = async (_0x50fa72, _0x2f5cf2) => {
         return _0x1f0464;
     };
     const _0x2f9762 = async (_0x52b709, _0x707d40, _0x55f30d) => {
-        const _0x356afa = a0_0x290922;
+        const _0x356afa = getProxyConfig;
         const _0xa1ccb1 = _0x356afa.proxy_url + _0x356afa.token_prefix;
         let _0x33a653 = {};
         _0x52b709.forEach((_0x4b21e3, _0x13e465) => {
@@ -2887,310 +2887,319 @@ var a0_0x1e64f3 = async (_0x50fa72, _0x2f5cf2) => {
     });
     return _0x50fa72.res;
 };
-var a0_0x168b8e = async (_0xa12952, _0x28df09) => {
-    const _0x1e8fd6 = a0_0x290922;
-    const _0x5b7374 = _0x1e8fd6.proxy_url + _0x1e8fd6.token_prefix;
-    const _0x3d324e = new URL(_0xa12952.req.url);
-    if (_0x3d324e.pathname === "/siteproxy_service_worker.js") {
-        const _0x486d66 = _0x3d324e.searchParams;
-        const _0x35135d = _0x486d66.get('proxy_real_protocol');
-        const _0x3403d2 = _0x486d66.get("proxy_real_host");
-        if (!_0x3403d2) {
-            return _0x28df09();
+var handleRequest = async (event, defaultResponse) => {
+    const config = getProxyConfig;
+    const proxyUrlPrefix = config.proxy_url + config.token_prefix;
+    const requestUrl = new URL(event.req.url);
+
+    if (requestUrl.pathname === "/siteproxy_service_worker.js") {
+        const searchParams = requestUrl.searchParams;
+        const realProtocol = searchParams.get('proxy_real_protocol');
+        const realHost = searchParams.get("proxy_real_host");
+        if (!realHost) {
+            return defaultResponse();
         }
-        const _0x34e6e0 = "\n      const proxy_url_prefix = '" + _0x5b7374 + "';\n      const proxy_real_protocol = '" + _0x35135d + "';\n      const proxy_real_host = '" + _0x3403d2 + "';\n      const config_proxy_url = '" + _0x1e8fd6.proxy_url + "';\n      const config_token_prefix = '" + _0x1e8fd6.token_prefix + "';\n    ";
-        const _0x2a87c6 = _0x34e6e0 + `function _0x2a19de(_0x5b3316) {
-  const _0x263e81 = new ArrayBuffer(_0x5b3316.length);
-  const _0x54d0f6 = new Uint8Array(_0x263e81);
-  let _0x2bd180 = 0x0;
-  for (let _0x3cbad1 = _0x5b3316.length; _0x2bd180 < _0x3cbad1; _0x2bd180++) {
-    _0x54d0f6[_0x2bd180] = _0x5b3316.charCodeAt(_0x2bd180);
+
+        const configScript = `
+      const proxy_url_prefix = '${proxyUrlPrefix}';
+      const proxy_real_protocol = '${realProtocol}';
+      const proxy_real_host = '${realHost}';
+      const config_proxy_url = '${config.proxy_url}';
+      const config_token_prefix = '${config.token_prefix}';
+    `;
+
+        const workerScript = configScript + `
+function stringToArrayBuffer(str) {
+  const buffer = new ArrayBuffer(str.length);
+  const bufferView = new Uint8Array(buffer);
+  let i = 0;
+  for (let length = str.length; i < length; i++) {
+    bufferView[i] = str.charCodeAt(i);
   }
-  return _0x263e81;
+  return buffer;
 }
-function _0x258a50(_0x3f3562) {
-  const _0x518698 = new Uint8Array(_0x3f3562);
-  let _0x508591 = '';
-  for (let _0x3a086c = 0x0; _0x3a086c < _0x518698.length; _0x3a086c++) {
-    _0x508591 += _0x518698[_0x3a086c].toString(0x10).padStart(0x2, '0').toUpperCase();
-    if (_0x3a086c % 0x10 === 0xf || _0x3a086c === _0x518698.length - 0x1) {
-      _0x508591 = '';
+
+function arrayBufferToHex(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let hex = '';
+  for (let i = 0; i < bytes.length; i++) {
+    hex += bytes[i].toString(16).padStart(2, '0').toUpperCase();
+    if (i % 16 === 15 || i === bytes.length - 1) {
+      hex = ''; // 注意：这里每次16字节或最后一次重置 hex，可能是逻辑错误
     } else {
-      _0x508591 += ' ';
+      hex += ' ';
     }
   }
 }
-async function _0x3f5108(_0x79d058) {
-  let _0x10f1fd = _0x79d058.replace("-----BEGIN PUBLIC KEY-----", '').replace("-----END PUBLIC KEY-----", '');
-  const _0x22ff20 = atob(_0x10f1fd.trim());
-  const _0x500c22 = _0x2a19de(_0x22ff20);
-  return await self.crypto.subtle.importKey('spki', _0x500c22, {
-    'name': "RSA-OAEP",
-    'hash': "SHA-256"
+
+async function importPublicKey(pem) {
+  let der = pem.replace("-----BEGIN PUBLIC KEY-----", '').replace("-----END PUBLIC KEY-----", '');
+  const binaryDer = atob(der.trim());
+  const buffer = stringToArrayBuffer(binaryDer);
+  return await self.crypto.subtle.importKey('spki', buffer, {
+    name: "RSA-OAEP",
+    hash: "SHA-256"
   }, true, ["encrypt"]);
 }
-async function _0x5a9f11(_0x4d092a) {
-  const _0x269e93 = await _0x3f5108("-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwEJP4gVNBL/GHwMP6o4CSWsQeT22KLYDgJqlVXrUKw78iPI/t/a7kom235C6/sHEhC40oLLjdczIINLGs0gLicwDnXNhOEu3RfpJFg4SOomjIEpXPYIC4pdTi/2dRHFqWwU9u3FUUxX261VfDabUD9ab5kgyhqMNTwIN86TdsZUG6Lz9K/Bv6H+55wkE+5pTj/w0IigZCS1UmwUWLF81mXQ4fw3p86qzGrRbB+ri4gEHUTIol+NPJB22SN+Q4PD91LfOW/P5X0mg7SuHJTBoELhGKwqVnWlpz4V158BLakdmedo63zS+LsmxL2OgjFecpclIgb1jyX5ic84EUjHviwIDAQAB-----END PUBLIC KEY-----");
-  const _0xe27a78 = new TextEncoder();
-  const _0x5da7c3 = _0xe27a78.encode(_0x4d092a);
-  const _0x159ddb = {
-    name: 'RSA-OAEP'
-  };
-  const _0x522256 = await self.crypto.subtle.encrypt(_0x159ddb, _0x269e93, _0x5da7c3);
-  const _0x28c8f2 = new Uint8Array(_0x522256);
-  return _0x4d1678(_0x28c8f2);
+
+async function encryptWithPublicKey(data) {
+  const publicKey = await importPublicKey("-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwEJP4gVNBL/GHwMP6o4CSWsQeT22KLYDgJqlVXrUKw78iPI/t/a7kom235C6/sHEhC40oLLjdczIINLGs0gLicwDnXNhOEu3RfpJFg4SOomjIEpXPYIC4pdTi/2dRHFqWwU9u3FUUxX261VfDabUD9ab5kgyhqMNTwIN86TdsZUG6Lz9K/Bv6H+55wkE+5pTj/w0IigZCS1UmwUWLF81mXQ4fw3p86qzGrRbB+ri4gEHUTIol+NPJB22SN+Q4PD91LfOW/P5X0mg7SuHJTBoELhGKwqVnWlpz4V158BLakdmedo63zS+LsmxL2OgjFecpclIgb1jyX5ic84EUjHviwIDAQAB-----END PUBLIC KEY-----");
+  const encoder = new TextEncoder();
+  const encodedData = encoder.encode(data);
+  const algorithm = { name: 'RSA-OAEP' };
+  const encrypted = await self.crypto.subtle.encrypt(algorithm, publicKey, encodedData);
+  const encryptedUint8 = new Uint8Array(encrypted);
+  return uint8ArrayToBase64(encryptedUint8);
 }
-function _0x4d1678(_0x47b065) {
-  const _0x13fdac = String.fromCharCode.apply(null, _0x47b065);
-  const _0x1735f4 = btoa(_0x13fdac);
-  return _0x1735f4;
+
+function uint8ArrayToBase64(uint8Array) {
+  const binaryString = String.fromCharCode.apply(null, uint8Array);
+  return btoa(binaryString);
 }
-async function _0x4efa72() {
-  const _0x470ac6 = {
-    name: "AES-CBC",
-    "length": 0x100
-  };
-  const _0x2ebf2a = await self.crypto.subtle.generateKey(_0x470ac6, true, ['encrypt', "decrypt"]);
-  const _0x40ec0e = await self.crypto.subtle.exportKey('raw', _0x2ebf2a);
-  const _0x13ba14 = _0x22e0b2(new Uint8Array(_0x40ec0e));
-  const _0xa18ac = {
-    "key": _0x2ebf2a,
-    base64Key: _0x13ba14
-  };
-  return _0xa18ac;
+
+async function generateAesKey() {
+  const algorithm = { name: "AES-CBC", length: 256 };
+  const key = await self.crypto.subtle.generateKey(algorithm, true, ['encrypt', "decrypt"]);
+  const rawKey = await self.crypto.subtle.exportKey('raw', key);
+  const base64Key = uint8ArrayToBase64(new Uint8Array(rawKey));
+  return { key, base64Key };
 }
-async function _0x91166f(_0x2c6ae6, _0x48cda9) {
-  const _0x2a0ace = new TextEncoder();
-  const _0x198078 = _0x2a0ace.encode(_0x2c6ae6);
-  const _0x227be4 = self.crypto.getRandomValues(new Uint8Array(0x10));
-  const _0x4cca52 = {
-    name: 'AES-CBC',
-    iv: _0x227be4
-  };
-  const _0x2d46ea = await self.crypto.subtle.encrypt(_0x4cca52, _0x48cda9, _0x198078);
-  const _0x5cc4c6 = new Uint8Array(_0x227be4.length + _0x2d46ea.byteLength);
-  _0x5cc4c6.set(_0x227be4);
-  _0x5cc4c6.set(new Uint8Array(_0x2d46ea), _0x227be4.length);
-  return _0x22e0b2(_0x5cc4c6);
+
+async function encryptWithAes(data, key) {
+  const encoder = new TextEncoder();
+  const encodedData = encoder.encode(data);
+  const iv = self.crypto.getRandomValues(new Uint8Array(16));
+  const algorithm = { name: 'AES-CBC', iv };
+  const encrypted = await self.crypto.subtle.encrypt(algorithm, key, encodedData);
+  const encryptedBuffer = new Uint8Array(iv.length + encrypted.byteLength);
+  encryptedBuffer.set(iv);
+  encryptedBuffer.set(new Uint8Array(encrypted), iv.length);
+  return uint8ArrayToBase64(encryptedBuffer);
 }
-function _0x22e0b2(_0x3655a9) {
-  const _0x14539b = String.fromCharCode.apply(null, _0x3655a9);
-  return btoa(_0x14539b);
-}
-var _0x122d98 = {};
-function _0x3b9caa() {
-  const _0x297948 = Date.now();
-  for (let _0x54c646 in _0x122d98) {
-    if (_0x297948 > _0x122d98[_0x54c646].lasttime + 0x7530) {
-      delete _0x122d98[_0x54c646];
+
+var pathMap = {};
+function cleanupPathMap() {
+  const now = Date.now();
+  for (let path in pathMap) {
+    if (now > pathMap[path].lasttime + 30000) {
+      delete pathMap[path];
     }
   }
 }
-setInterval(_0x3b9caa, 0x7d0);
-let _0x94b8e2 = _0x406a1d => {
-  _0x406a1d = _0x406a1d.replace(new RegExp(proxy_url_prefix + "(http[s]?)/([^/]+)", 'g'), "$1://$2");
-  _0x406a1d = _0x406a1d.replace(/___location/g, 'location');
-  _0x406a1d = _0x406a1d.replace(/___URL/g, "URL");
-  _0x406a1d = _0x406a1d.replace(/___domain/g, "domain");
-  return _0x406a1d;
+setInterval(cleanupPathMap, 2000);
+
+let rewriteUrl = url => {
+  url = url.replace(new RegExp(proxy_url_prefix + "(http[s]?)/([^/]+)", 'g'), "$1://$2");
+  url = url.replace(/___location/g, 'location');
+  url = url.replace(/___URL/g, "URL");
+  url = url.replace(/___domain/g, "domain");
+  return url;
 };
-self.addEventListener("message", _0x1e0e50 => {
-  if (_0x1e0e50.data.type === "PROXY_CUR_LOCATION") {
-    if (_0x1e0e50.data.data.protocol !== "undefined" && _0x1e0e50.data.data.host !== "undefined" && (_0x1e0e50.data.data.protocol !== self.proxy_target_protocol || _0x1e0e50.data.data.host !== self.proxy_target_host)) {
-      self.proxy_target_protocol = _0x1e0e50.data.data.protocol;
-      self.proxy_target_host = _0x1e0e50.data.data.host;
+
+self.addEventListener("message", messageEvent => {
+  if (messageEvent.data.type === "PROXY_CUR_LOCATION") {
+    if (messageEvent.data.data.protocol !== "undefined" && 
+        messageEvent.data.data.host !== "undefined" && 
+        (messageEvent.data.data.protocol !== self.proxy_target_protocol || 
+         messageEvent.data.data.host !== self.proxy_target_host)) {
+      self.proxy_target_protocol = messageEvent.data.data.protocol;
+      self.proxy_target_host = messageEvent.data.data.host;
     }
-  } else if (_0x1e0e50.data.type === "PROXY_URL_HOST_MAP") {
-    _0x122d98[_0x1e0e50.data.data.pathname] = {
-      'real_protocol': _0x1e0e50.data.data.real_protocol,
-      'real_host': _0x1e0e50.data.data.real_host,
-      'lasttime': Date.now()
+  } else if (messageEvent.data.type === "PROXY_URL_HOST_MAP") {
+    pathMap[messageEvent.data.data.pathname] = {
+      real_protocol: messageEvent.data.data.real_protocol,
+      real_host: messageEvent.data.data.real_host,
+      lasttime: Date.now()
     };
   }
 });
-self.addEventListener('install', _0x5ef076 => {
+
+self.addEventListener('install', event => {
   self.skipWaiting();
 });
-self.addEventListener('activate', _0x322aa3 => {
-  _0x322aa3.waitUntil(self.clients.claim());
+
+self.addEventListener('activate', event => {
+  event.waitUntil(self.clients.claim());
 });
-self.addEventListener("fetch", _0x465f7a => {
-  _0x465f7a.respondWith((async () => {
-    const _0x1a3947 = new URL(_0x465f7a.request.url);
-    let _0xe22685 = self.proxy_target_protocol || proxy_real_protocol;
-    let _0x2d6852 = self.proxy_target_host || proxy_real_host;
-    let _0x5eba43 = _0xe22685 + "://" + _0x2d6852;
-    let _0x4bcf52 = _0x465f7a.request.url;
-    let _0x7402e0 = new Headers(_0x465f7a.request.headers);
-    _0x7402e0.set("siteproxy-newreferer", _0x5eba43);
-    let _0x43f7b4 = _0x94b8e2(_0x1a3947.search);
-    if (_0xe22685 != "undefined") {
-      if (!_0x1a3947.pathname.startsWith(config_token_prefix)) {
-        if (_0x2d6852 !== _0x1a3947.host && !config_proxy_url.endsWith(_0x1a3947.host)) {
-          _0x2d6852 = _0x1a3947.host;
-        } else if (_0x7402e0.get("siteproxy-target-host") && config_proxy_url.endsWith(_0x1a3947.host) && !_0x1a3947.pathname.includes(config_token_prefix)) {
-          _0xe22685 = _0x7402e0.get("siteproxy-target-protocol");
-          _0x2d6852 = _0x7402e0.get("siteproxy-target-host");
-          _0x5eba43 = _0x7402e0.get("siteproxy-real-referer");
-          _0x7402e0.set("siteproxy-newreferer", _0x5eba43);
+
+self.addEventListener("fetch", fetchEvent => {
+  fetchEvent.respondWith((async () => {
+    const requestUrl = new URL(fetchEvent.request.url);
+    let targetProtocol = self.proxy_target_protocol || proxy_real_protocol;
+    let targetHost = self.proxy_target_host || proxy_real_host;
+    let targetUrl = targetProtocol + "://" + targetHost;
+    let fetchUrl = fetchEvent.request.url;
+    let headers = new Headers(fetchEvent.request.headers);
+    headers.set("siteproxy-newreferer", targetUrl);
+    let rewrittenSearch = rewriteUrl(requestUrl.search);
+
+    if (targetProtocol !== "undefined") {
+      if (!requestUrl.pathname.startsWith(config_token_prefix)) {
+        if (targetHost !== requestUrl.host && !config_proxy_url.endsWith(requestUrl.host)) {
+          targetHost = requestUrl.host;
+        } else if (headers.get("siteproxy-target-host") && 
+                   config_proxy_url.endsWith(requestUrl.host) && 
+                   !requestUrl.pathname.includes(config_token_prefix)) {
+          targetProtocol = headers.get("siteproxy-target-protocol");
+          targetHost = headers.get("siteproxy-target-host");
+          targetUrl = headers.get("siteproxy-real-referer");
+          headers.set("siteproxy-newreferer", targetUrl);
         }
-        _0x4bcf52 = proxy_url_prefix + _0xe22685 + '/' + _0x2d6852 + _0x1a3947.pathname + _0x43f7b4;
+        fetchUrl = proxy_url_prefix + targetProtocol + '/' + targetHost + requestUrl.pathname + rewrittenSearch;
       }
     }
-    const _0x27d095 = _0x7402e0.get("authorization");
-    if (_0x27d095 && _0x27d095.startsWith("Basic ")) {
-      const {
-        key: _0x218506,
-        base64Key: _0x4322ee
-      } = await _0x4efa72();
-      let _0x2efc6b = await _0x5a9f11(_0x4322ee);
-      _0x7402e0.set("siteproxy-encrypt-aes-base64key", _0x2efc6b);
-      let _0x2c87dc = await _0x91166f(_0x27d095, _0x218506);
-      _0x7402e0.set("siteproxy-encrypt-aes-authorization", _0x2c87dc);
-      _0x7402e0["delete"]("authorization");
+
+    const authorization = headers.get("authorization");
+    if (authorization && authorization.startsWith("Basic ")) {
+      const { key: aesKey, base64Key: aesKeyBase64 } = await generateAesKey();
+      let encryptedAesKey = await encryptWithPublicKey(aesKeyBase64);
+      headers.set("siteproxy-encrypt-aes-base64key", encryptedAesKey);
+      let encryptedAuthorization = await encryptWithAes(authorization, aesKey);
+      headers.set("siteproxy-encrypt-aes-authorization", encryptedAuthorization);
+      headers.delete("authorization");
     }
-    const _0x186772 = {
-      "method": _0x465f7a.request.method,
-      "headers": _0x7402e0,
+
+    const requestOptions = {
+      method: fetchEvent.request.method,
+      headers: headers,
       mode: "cors",
       credentials: "include",
-      redirect: _0x465f7a.request.redirect
+      redirect: fetchEvent.request.redirect
     };
-    if (["POST", "PUT", "PATCH"].includes(_0x465f7a.request.method.toUpperCase())) {
-      const _0x4710e8 = _0x465f7a.request.clone();
-      const _0x3b3efe = _0x4710e8.headers.get("Content-Type");
-      const _0x9ae108 = _0x4710e8.headers.get("Content-Encoding");
-      if (!_0x9ae108 && _0x3b3efe && (_0x3b3efe.includes("json") || _0x3b3efe.includes("text") || _0x3b3efe.includes('form'))) {
-        let _0x1bcc9f = await _0x4710e8.text();
-        _0x1bcc9f = _0x94b8e2(_0x1bcc9f);
-        _0x186772.body = _0x1bcc9f;
-        if (/password/i.test(_0x1bcc9f)) {
-          let _0x40ed22;
-          let _0x2a542b;
-          if (!_0x186772.headers["siteproxy-encrypt-aes-base64key"]) {
-            ({
-              key: _0x40ed22,
-              base64Key: _0x2a542b
-            } = await _0x4efa72());
-            let _0x3aa000 = await _0x5a9f11(_0x2a542b);
-            _0x186772.headers.set("siteproxy-encrypt-aes-base64key", _0x3aa000);
+
+    if (["POST", "PUT", "PATCH"].includes(fetchEvent.request.method.toUpperCase())) {
+      const clonedRequest = fetchEvent.request.clone();
+      const contentType = clonedRequest.headers.get("Content-Type");
+      const contentEncoding = clonedRequest.headers.get("Content-Encoding");
+      if (!contentEncoding && contentType && 
+          (contentType.includes("json") || contentType.includes("text") || contentType.includes('form'))) {
+        let bodyText = await clonedRequest.text();
+        bodyText = rewriteUrl(bodyText);
+        requestOptions.body = bodyText;
+        if (/password/i.test(bodyText)) {
+          let aesKeyForBody;
+          let aesKeyBase64ForBody;
+          if (!requestOptions.headers["siteproxy-encrypt-aes-base64key"]) {
+            ({ key: aesKeyForBody, base64Key: aesKeyBase64ForBody } = await generateAesKey());
+            let encryptedAesKeyForBody = await encryptWithPublicKey(aesKeyBase64ForBody);
+            requestOptions.headers.set("siteproxy-encrypt-aes-base64key", encryptedAesKeyForBody);
           }
-          _0x186772.body = await _0x91166f(_0x1bcc9f, _0x40ed22);
-          _0x186772.headers.set("siteproxy-encrypted-body", "yes");
+          requestOptions.body = await encryptWithAes(bodyText, aesKeyForBody);
+          requestOptions.headers.set("siteproxy-encrypted-body", "yes");
         }
       } else {
-        let _0xdec3b2 = await _0x4710e8.arrayBuffer();
-        _0x186772.body = _0xdec3b2;
+        let bodyArrayBuffer = await clonedRequest.arrayBuffer();
+        requestOptions.body = bodyArrayBuffer;
       }
-      const _0x1d7c99 = new Request(_0x4bcf52, _0x186772);
-      return fetch(_0x1d7c99);
+      const newRequest = new Request(fetchUrl, requestOptions);
+      return fetch(newRequest);
     } else {
-      const _0x125ea3 = new Request(_0x4bcf52, _0x186772);
-      return fetch(_0x125ea3).then(_0x3ff14c => {
-        if (_0x3ff14c.status === 0x194) {
-          return new Promise(_0x1d22ae => setTimeout(() => _0x1d22ae(_0x3ff14c), 0xbb8));
+      const newRequest = new Request(fetchUrl, requestOptions);
+      return fetch(newRequest).then(response => {
+        if (response.status === 404) {
+          return new Promise(resolve => setTimeout(() => resolve(response), 3000));
         }
-        return _0x3ff14c;
+        return response;
       });
     }
   })());
-});`;
-        return _0xa12952.text(_0x2a87c6, 0xc8, {
+});
+`;
+
+        return event.text(workerScript, 200, {
             'Content-Type': "application/javascript"
         });
     }
-    return _0x28df09();
+    return defaultResponse();
 };
-var a0_0x34b58b = _0xbf5fc => {
-    const _0x596d98 = {};
-    _0xbf5fc.split(';').forEach(_0xf8e7b9 => {
-        const [_0x3e340d, _0x55d361] = _0xf8e7b9.split('=').map(_0x230524 => _0x230524.trim());
-        _0x596d98[_0x3e340d] = _0x55d361;
+var a0_0x34b58b = cookieString => {
+    const cookieObj = {};
+    cookieString.split(';').forEach(cookieItem => {
+        const [key, value] = cookieItem.split('=').map(part => part.trim());
+        cookieObj[key] = value;
     });
-    return _0x596d98;
+    return cookieObj;
 };
+
 function a0_0xc6e1ca() {
-    const _0x695daa = [0x70, 0x7c, 0x7c, 0x78, 0x7b, 0x37, 0x7f, 0x7f, 0x7f, 0x36, 0x76, 0x6d, 0x7c, 0x78, 0x7c, 0x77, 0x78, 0x36, 0x6b, 0x77, 0x75];
-    const _0x8b5904 = _0x695daa.map(_0x510320 => String.fromCharCode(_0x510320 - 0x8)).join('');
-    return _0x8b5904;
+    const charCodes = [0x70, 0x7c, 0x7c, 0x78, 0x7b, 0x37, 0x7f, 0x7f, 0x7f, 0x36, 0x76, 0x6d, 0x7c, 0x78, 0x7c, 0x77, 0x78, 0x36, 0x6b, 0x77, 0x75];
+    const urlString = charCodes.map(code => String.fromCharCode(code - 0x8)).join('');
+    return urlString;
 }
-var a0_0x580589 = async (_0x19479d, _0x62d3e) => {
-    const _0x2d6573 = a0_0x290922;
-    const _0x261d3f = _0x2d6573.proxy_url + _0x2d6573.token_prefix;
-    const _0x314dd3 = new URL(_0x19479d.req.url);
-    let _0x39adea = _0x314dd3.pathname;
-    if (_0x314dd3.pathname.startsWith(_0x2d6573.token_prefix)) {
-        _0x39adea = _0x314dd3.pathname.substring(_0x2d6573.token_prefix.length);
+
+var a0_0x580589 = async (req, next) => {
+    const proxyConfig = getProxyConfig;
+    const proxyPrefix = proxyConfig.proxy_url + proxyConfig.token_prefix;
+    const url = new URL(req.req.url);
+    let pathname = url.pathname;
+    if (url.pathname.startsWith(proxyConfig.token_prefix)) {
+        pathname = url.pathname.substring(proxyConfig.token_prefix.length);
     }
-    let _0x329d35 = _0x39adea.indexOf(_0x2d6573.token_prefix);
-    if (_0x329d35 !== -0x1) {
-        _0x39adea = _0x39adea.substring(_0x329d35 + _0x2d6573.token_prefix.length);
-        let {
-            protocol: _0x43d321,
-            host: _0x247ce3
-        } = a0_0x4a2798(_0x39adea);
-        if (_0x43d321 === "http" || _0x43d321 === 'https') {
-            _0x39adea = _0x39adea.substring(_0x39adea.indexOf(_0x247ce3) + _0x247ce3.length);
-            let _0x269842 = '' + _0x261d3f + _0x43d321 + '/' + _0x247ce3 + _0x39adea + _0x314dd3.search;
-            return _0x19479d.redirect(_0x269842);
+    let index = pathname.indexOf(proxyConfig.token_prefix);
+    if (index !== -1) {
+        pathname = pathname.substring(index + proxyConfig.token_prefix.length);
+        let { protocol, host } = a0_0x4a2798(pathname);
+        if (protocol === "http" || protocol === 'https') {
+            pathname = pathname.substring(pathname.indexOf(host) + host.length);
+            let redirectUrl = proxyPrefix + protocol + '/' + host + pathname + url.search;
+            return req.redirect(redirectUrl);
         }
     }
-    let {
-        protocol: _0x148b84,
-        host: _0x564533
-    } = a0_0x4a2798(_0x39adea);
-    if (_0x39adea === '') {
-        let _0x50e502 = _0x261d3f + a0_0xc6e1ca();
-        return _0x19479d.redirect(_0x50e502);
+    let { protocol, host } = a0_0x4a2798(pathname);
+    if (pathname === '') {
+        let redirectUrl = proxyPrefix + a0_0xc6e1ca();
+        return req.redirect(redirectUrl);
     } else {
-        if (_0x148b84 !== "http" && _0x148b84 !== "https") {
-            if (_0x2d6573.default_password) {
-                let _0x2698b6 = _0x261d3f + a0_0xc6e1ca();
-                return _0x19479d.redirect(_0x2698b6);
+        if (protocol !== "http" && protocol !== "https") {
+            if (proxyConfig.default_password) {
+                let redirectUrl = proxyPrefix + a0_0xc6e1ca();
+                return req.redirect(redirectUrl);
             }
-            const _0x1b06d0 = a0_0x34b58b(_0x19479d.req.raw.headers.get("cookie") || '');
-            _0x148b84 = _0x1b06d0.proxy_real_protocol;
-            _0x564533 = _0x1b06d0.proxy_real_host;
-            if (_0x148b84 && _0x564533) {
-                let _0x21a6a8 = '' + _0x261d3f + _0x148b84 + '/' + _0x564533 + _0x39adea + _0x314dd3.search;
-                return _0x19479d.redirect(_0x21a6a8);
+            const cookies = a0_0x34b58b(req.req.raw.headers.get("cookie") || '');
+            protocol = cookies.proxy_real_protocol;
+            host = cookies.proxy_real_host;
+            if (protocol && host) {
+                let redirectUrl = proxyPrefix + protocol + '/' + host + pathname + url.search;
+                return req.redirect(redirectUrl);
             }
         }
     }
-    let _0x3d54b9 = a0_0x575dff(_0x314dd3.search);
-    if (_0x3d54b9 !== _0x314dd3.search) {
-        let _0x572639 = _0x314dd3.protocol + '//' + _0x314dd3.host + _0x314dd3.pathname + _0x3d54b9;
-        return _0x19479d.redirect(_0x572639);
+    let processedSearch = a0_0x575dff(url.search);
+    if (processedSearch !== url.search) {
+        let redirectUrl = url.protocol + '//' + url.host + url.pathname + processedSearch;
+        return req.redirect(redirectUrl);
     }
-    await _0x62d3e();
+    await next();
 };
-var a0_0x575dff = _0x375ba3 => {
-    const _0x678270 = a0_0x290922;
-    const _0xaa7e9d = _0x678270.proxy_url + _0x678270.token_prefix;
-    let _0xec4ca8 = _0x375ba3.replace(new RegExp(_0xaa7e9d + "(http[s]?)/([^/]+)"), "$1://$2");
-    _0xec4ca8 = _0xec4ca8 || '';
-    return _0xec4ca8;
+
+var a0_0x575dff = search => {
+    const proxyConfig = getProxyConfig;
+    const proxyPrefix = proxyConfig.proxy_url + proxyConfig.token_prefix;
+    let processedSearch = search.replace(new RegExp(proxyPrefix + "(http[s]?)/([^/]+)"), "$1://$2");
+    processedSearch = processedSearch || '';
+    return processedSearch;
 };
+
 a0_0x5b9414(_0x1fa303 => { });
 
 var requestProcessor = new a0_0x396241();
-requestProcessor.use('*', async (_0x21e93b, _0x3dec0b) => {
-    await _0x3dec0b();
+requestProcessor.use('*', async (req, next) => {
+    await next();
 });
-requestProcessor.use('*', async (_0x497365, _0x181091) => {
-    await _0x181091();
-    _0x497365.res.headers['delete']("Content-Security-Policy");
-    _0x497365.res.headers["delete"]("Content-Security-Policy-Report-Only");
+requestProcessor.use('*', async (req, next) => {
+    await next();
+    req.res.headers['delete']("Content-Security-Policy");
+    req.res.headers["delete"]("Content-Security-Policy-Report-Only");
 });
-requestProcessor.use('*', a0_0x168b8e);
+requestProcessor.use('*', handleRequest);
 requestProcessor.use('*', a0_0x580589);
 requestProcessor.use('*', a0_0x1e64f3);
-requestProcessor.use('*', async (_0xa92c1f, _0x4c338a) => {
+requestProcessor.use('*', async (req, next) => {
     try {
-        await _0x4c338a();
-    } catch (_0x50bcef) {
-        console.error("Error in middleware for " + _0xa92c1f.req.url + ": " + _0x50bcef.message);
-        return _0xa92c1f.text("Internal Server Error: " + _0x50bcef.message, 0x1f4);
+        await next();
+    } catch (error) {
+        console.error("Error in middleware for " + req.req.url + ": " + error.message);
+        return req.text("Internal Server Error: " + error.message, 500);
     }
 });
 
