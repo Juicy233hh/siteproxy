@@ -829,7 +829,7 @@ var a0_0x428de4 = class extends class { } {
                 return this.fetch(_0x3d7099, _0x42ef8f, _0xf5a33);
             }
             _0x3d7099 = _0x3d7099.toString();
-            const _0x535ed2 = /^https?:\/\//.test(_0x3d7099) ? _0x3d7099 : "http://localhost" + a0_0x29d579('/', _0x3d7099);
+            const _0x535ed2 = /^https?:\/\//.test(_0x3d7099) ? _0x3d7099 : "https://proxy.privatevpn.dpdns.org" + a0_0x29d579('/', _0x3d7099);
             const _0x38618b = new Request(_0x535ed2, _0x37369f);
             return this.fetch(_0x38618b, _0x42ef8f, _0xf5a33);
         };
